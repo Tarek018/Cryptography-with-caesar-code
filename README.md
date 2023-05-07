@@ -9,4 +9,5 @@ This code exists in this until now in the terminal (there is no interface)
 
 - Exemple:
 . Give the clear text: hello world my name is Tarek Triki
+
 . Cipher text is : KHOORZRUOGPBQDPHLVWDUHNWULNL
