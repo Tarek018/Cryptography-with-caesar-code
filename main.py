@@ -2,7 +2,7 @@ alphabet = []
 
 dictionnaire = {}
 
-Text_chiffrer = ''
+Text_chiffrer = ""
 
 espace = {}
 
@@ -32,6 +32,16 @@ for j in range(len(Text_Claire)):
         space_indices.append(j)
 
 for key,value in dictionnaire.items():
-    Text_chiffrer = Text_chiffrer + alphabet[value+3]
-    print(Text_Claire.index())
+    print(alphabet[value] )
+    if alphabet[value] == 'X':
+         Text_chiffrer = Text_chiffrer + alphabet[0]
+    else:
+         if alphabet[value] == 'Y':
+             Text_chiffrer = Text_chiffrer + alphabet[1]
+         else:
+             if alphabet[value] == 'Z':
+                 Text_chiffrer = Text_chiffrer + alphabet[2]
+             else:
+                Text_chiffrer = Text_chiffrer + alphabet[value+3]
+    
 print(Text_chiffrer)
