@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import ttk,filedialog,messagebox,simpledialog
 import re
 from functions import caesar_code
+import subprocess
+
 
 
 enable_btn =DISABLED 
@@ -42,6 +44,8 @@ def encrypt_text():
     with open(new_file_path, 'w') as file:
         # Write content to the file
         file.write(cipher_text)
+        subprocess.Popen(['notepad.exe',new_file_path])
+
 
 
 
