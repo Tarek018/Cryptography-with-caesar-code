@@ -48,25 +48,18 @@ def encrypt_text():
 
 
 
-
-
-
-
-
-
-
 root = Tk()
 root.attributes('-fullscreen', True)
 root.bind('<Escape>',lambda e: root.destroy())
 
-select_button = Button(root, text="Select File", command=open_file)
-select_button.pack()
+select_button = Button(root, text="Select File", command=open_file,height=5, width=20, cursor="hand2")
+select_button.pack(padx=50, pady=50)
 
-key_button = Button(root, text="Enter the key", command=enter_key)
-key_button.pack()
+key_button = Button(root, text="Enter the key", command=enter_key,height=5, width=20, cursor="hand2")
+key_button.pack(padx=50, pady=50)
 
-chiffre_btn = Button(root, text="Encrypt", command=encrypt_text, state= enable_btn)
-chiffre_btn.pack()
+chiffre_btn = Button(root, text="Encrypt", command=encrypt_text, state= enable_btn,height=5, width=20, cursor="hand2")
+chiffre_btn.pack(padx=50, pady=50)
 
 
 
