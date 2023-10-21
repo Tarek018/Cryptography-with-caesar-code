@@ -9,11 +9,13 @@ import subprocess
 enable_btn =DISABLED 
 key = 0
 plain_text = ''
+file_validty = False
 
 
 def open_file():
     file_path = filedialog.askopenfilename()
     text = ''
+    global file_validty
     if file_path:
         with open(file_path, 'r') as file:
             text = file.read()
@@ -26,6 +28,8 @@ def open_file():
                 print(text)
                 global plain_text
                 plain_text = text
+                key_button.config(state=ACTIVE)
+
             
 def enter_key():
     number = simpledialog.askinteger("Enter a Number", "Please enter a number:")
@@ -55,7 +59,7 @@ root.bind('<Escape>',lambda e: root.destroy())
 select_button = Button(root, text="Select File", command=open_file,height=5, width=20, cursor="hand2")
 select_button.pack(padx=50, pady=50)
 
-key_button = Button(root, text="Enter the key", command=enter_key,height=5, width=20, cursor="hand2")
+key_button = Button(root, text="Enter the key", command=enter_key, state= DISABLED, height=5, width=20, cursor="hand2")
 key_button.pack(padx=50, pady=50)
 
 chiffre_btn = Button(root, text="Encrypt", command=encrypt_text, state= enable_btn,height=5, width=20, cursor="hand2")
