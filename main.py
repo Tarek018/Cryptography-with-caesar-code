@@ -70,8 +70,8 @@ def page1():
     global chiffre_btn
     global encrypt_btn
     global decrypt_btn
-    decrypt_btn.config(state=ACTIVE)
     encrypt_btn.config(state=DISABLED)
+    decrypt_btn.config(state=ACTIVE)
 
 
     select_button = Button(root, text="Select File", command=open_file,height=5, width=20, cursor="hand2")
@@ -103,9 +103,9 @@ def page2():
 root = Tk()
 root.attributes('-fullscreen', True)
 root.bind('<Escape>',lambda e: root.destroy())
-encrypt_btn = Button(root, text="Encrypt", command=page1, height=5, width=20, cursor="hand2")
+encrypt_btn = Button(root, text="Encrypt", command=page1,state=NORMAL, height=5, width=20, cursor="hand2")
 encrypt_btn.pack(padx=50, pady=50,side="left")
-decrypt_btn = Button(root, text="Decrypt", command=page2, height=5, width=20, cursor="hand2")
+decrypt_btn = Button(root, text="Decrypt", command=page2,state=NORMAL, height=5, width=20, cursor="hand2")
 decrypt_btn.pack(padx=50, pady=50,side="left")
 
 
