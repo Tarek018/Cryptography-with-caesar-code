@@ -1,4 +1,6 @@
-def caesar_code(Text):
+import string
+
+def caesar_code(Text,key):
     alphabet = []
     # Add each letter of the alphabet to the array using a for loop
     for letter in range(ord('A'), ord('Z') + 1):
@@ -8,20 +10,12 @@ def caesar_code(Text):
 
     for char in Text:
         i=0
-        for ch in alphabet:
-            if char == ch and char == "X":
-                Text_chiffrer = Text_chiffrer + alphabet[0]    
-                break
-            else:
-                if char == ch and char == 'Y':
-                    Text_chiffrer = Text_chiffrer + alphabet[1]
-                    break
-                else:
-                    if char == ch and char == 'Z':
-                        Text_chiffrer = Text_chiffrer + alphabet[2]
-                        break
-                    else:
-                        if char == ch:
-                            Text_chiffrer = Text_chiffrer + alphabet[i+3]
-            i = i+1     
+        alphabet = string.ascii_lowercase
+        char = char.lower()
+        if char in alphabet:
+            index = alphabet.index(char)
+            new_index = (index+key) % 26
+            Text_chiffrer = Text_chiffrer + alphabet[new_index]    
+        else:
+            return -1  # Character is not in the alphabet
     return Text_chiffrer
