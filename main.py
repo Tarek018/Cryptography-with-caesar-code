@@ -24,7 +24,6 @@ def open_file():
     if file_path:
         with open(file_path, 'r') as file:
             text = file.read()
-            print(text.get)
             # Check if the file contains numbers
             if re.search(r'\d', text):
                 messagebox.showwarning("Alert", "The file contains numbers!\nPlease try again.")
