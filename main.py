@@ -131,3 +131,5 @@ decrypt_btn = tk.Button(root, text="Decrypt", command=page2, state=NORMAL, heigh
 decrypt_btn.pack(padx=50, pady=50, side="left")
 
 root.mainloop()
+
+#By Tarek Triki
